@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dragonos.tracker.mapper.IssueInfoMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.dragonos.tracker.pojo.IssueInfo">
+        <id column="id" property="id" />
+        <result column="contributor_id" property="contributorId" />
+        <result column="contributor_name" property="contributorName" />
+        <result column="title" property="title" />
+        <result column="created_at" property="createdAt" />
+        <result column="updated_at" property="updatedAt" />
+        <result column="html_url" property="htmlUrl" />
+        <result column="project_id" property="projectId" />
+        <result column="project_name" property="projectName" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, contributor_id, contributor_name, title, created_at, updated_at, html_url, project_id, project_name
+    </sql>
+
+</mapper>

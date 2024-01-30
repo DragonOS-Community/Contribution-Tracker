@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dragonos.tracker.mapper.CertificateMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.dragonos.tracker.pojo.Certificate">
+        <id column="id" property="id" />
+        <result column="html_url" property="htmlUrl" />
+        <result column="description" property="description" />
+        <result column="contributor_name" property="contributorName" />
+        <result column="qr_code_image_path" property="qrCodeImagePath" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, html_url, description, contributor_name, qr_code_image_path
+    </sql>
+
+</mapper>
