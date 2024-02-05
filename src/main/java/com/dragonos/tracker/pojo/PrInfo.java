@@ -45,12 +45,12 @@ public class PrInfo implements Serializable {
     /**
      * pr提交时间
      */
-    private LocalDate createdAt;
+    private String createdAt;
 
     /**
      * pr的update时间
      */
-    private LocalDate updatedAt;
+    private String updatedAt;
 
     /**
      * pr具体信息地址

@@ -25,10 +25,7 @@ import org.springframework.stereotype.Service;
 public class PrInfoServiceImpl implements PrInfoService {
     @Autowired
     PrInfoMapper prInfoMapper;
-    @Override
-    public int savePrInfo(PrInfo prInfo, Contributor contributor, Project project) {
-        return 0;
-    }
+
 
     @Override
     public PageResult<PrInfo> queryPrInfoByContributor(PageParams pageParams, Contributor contributor) {

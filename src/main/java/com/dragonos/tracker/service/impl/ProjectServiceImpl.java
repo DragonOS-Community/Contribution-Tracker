@@ -3,6 +3,7 @@ package com.dragonos.tracker.service.impl;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.conditions.query.LambdaQueryChainWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.dragonos.tracker.config.GithubConfig;
 import com.dragonos.tracker.config.PageParams;
 import com.dragonos.tracker.config.PageResult;
 import com.dragonos.tracker.mapper.ProjectMapper;
@@ -31,6 +32,8 @@ import java.util.List;
 public class ProjectServiceImpl implements ProjectService {
     @Autowired
     ProjectMapper projectMapper;
+    @Autowired
+    GithubConfig githubConfig;
     @Override
     public List<Project> queryAllProjects() {
         List<Project> projects = projectMapper.selectList(null);  // 查询所有
@@ -54,11 +57,7 @@ public class ProjectServiceImpl implements ProjectService {
         PageResult<Project> result = new PageResult(projectPage.getRecords(), projectPage.getTotal(), pageParams.getPageNo(), pageParams.getPageSize());
         return result;
     }
-    @Override
-    public int saveProjects() {
 
-        return 0;
-    }
 
     private List<Project> getProjectFromGithub(String owner){
         OkHttpClient client = new OkHttpClient();

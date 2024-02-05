@@ -48,36 +48,6 @@ public class Project implements Serializable {
     private String description;
 
     /**
-     * 项目创建时间
-     */
-    private LocalDateTime createdAt;
-
-    /**
-     * 项目update时间
-     */
-    private LocalDateTime updatedAt;
-
-    /**
-     * 项目所选协议
-     */
-    private String license;
-
-    /**
-     * fork数
-     */
-    private Integer forksCount;
-
-    /**
-     * star数
-     */
-    private Integer stargazersCount;
-
-    /**
-     * watcher数
-     */
-    private Integer watchersCount;
-
-    /**
      * 该项目的pr数量
      */
     private Integer prNum;

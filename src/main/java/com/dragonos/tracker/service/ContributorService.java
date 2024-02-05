@@ -17,6 +17,5 @@ import java.util.List;
 public interface ContributorService{
     // 按页搜索Contributor
     PageResult<Contributor> queryContributorByPage(PageParams pageParams);
-    // 向数据库中插入数据
-    int saveContributor(List<Contributor> list);
+
 }

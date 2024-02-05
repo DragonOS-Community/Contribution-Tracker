@@ -45,12 +45,12 @@ public class IssueInfo implements Serializable {
     /**
      * issue提交时间
      */
-    private LocalDate createdAt;
+    private String createdAt;
 
     /**
      * issue的update时间
      */
-    private LocalDate updatedAt;
+    private String updatedAt;
 
     /**
      * issue具体信息地址

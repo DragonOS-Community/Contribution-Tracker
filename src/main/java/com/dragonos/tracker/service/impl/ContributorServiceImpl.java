@@ -37,15 +37,4 @@ public class ContributorServiceImpl implements ContributorService {
         PageResult<Contributor> result = new PageResult(list, total, pageParams.getPageNo(), pageParams.getPageSize());
         return result;
     }
-
-    /**
-     * 保存
-     * @param list
-     * @return
-     */
-    @Override
-    public int saveContributor(List<Contributor> list) {
-
-        return 0;
-    }
 }

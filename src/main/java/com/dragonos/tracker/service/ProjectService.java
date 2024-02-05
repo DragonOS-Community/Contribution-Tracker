@@ -23,5 +23,5 @@ public interface ProjectService{
     // 按名称模糊查询项目
     PageResult<Project> queryProjectsByName(PageParams pageParams, String name);
     // 保存project
-    int saveProjects();
+
 }

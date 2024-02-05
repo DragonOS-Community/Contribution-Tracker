@@ -27,10 +27,6 @@ public class IssueInfoServiceImpl implements IssueInfoService {
     @Autowired
     IssueInfoMapper issueInfoMapper;
 
-    @Override
-    public int saveIssueInfo(IssueInfo issueInfo, Contributor contributor, Project project) {
-        return 0;
-    }
 
     @Override
     public PageResult<IssueInfo> queryIssueInfoByContributor(PageParams pageParams, Contributor contributor) {
