@@ -16,8 +16,6 @@ import java.util.List;
  * @since 2024-01-30
  */
 public interface ProjectService{
-    // 查询所有的项目
-    List<Project> queryAllProjects();
     // 按页查询项目
     PageResult<Project> queryProjectsByPage(PageParams pageParams);
     // 按名称模糊查询项目

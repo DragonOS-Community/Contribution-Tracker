@@ -26,9 +26,20 @@ public class ContributorServiceImpl implements ContributorService {
     @Autowired
     ContributorMapper contributorMapper;
     @Override
-    public PageResult<Contributor> queryContributorByPage(PageParams pageParams) {
+    public PageResult<Contributor> queryContributorForAllProject(PageParams pageParams) {
+        // 获取数据列表
+        List<Contributor> pageResult = contributorMapper.selectAllByAllProject(pageParams);
+        long total = pageResult.size();
+        // 构建结果集
+        PageResult<Contributor> result = new PageResult(pageResult, total, pageParams.getPageNo(), pageParams.getPageSize());
+        return result;
+    }
+
+    @Override
+    public PageResult<Contributor> queryContributorForAProject(PageParams pageParams, String projectId) {
         LambdaQueryWrapper<Contributor> queryWrapper = new LambdaQueryWrapper<>();
         Page<Contributor> page = new Page<>(pageParams.getPageNo(), pageParams.getPageSize());
+        queryWrapper.eq(Contributor::getProjectId, projectId);
         // 获取数据列表
         Page<Contributor> pageResult = contributorMapper.selectPage(page, queryWrapper);
         List<Contributor> list = pageResult.getRecords();
@@ -37,4 +48,6 @@ public class ContributorServiceImpl implements ContributorService {
         PageResult<Contributor> result = new PageResult(list, total, pageParams.getPageNo(), pageParams.getPageSize());
         return result;
     }
+
+
 }

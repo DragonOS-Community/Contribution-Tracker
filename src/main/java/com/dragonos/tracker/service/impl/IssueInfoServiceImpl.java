@@ -29,20 +29,20 @@ public class IssueInfoServiceImpl implements IssueInfoService {
 
 
     @Override
-    public PageResult<IssueInfo> queryIssueInfoByContributor(PageParams pageParams, Contributor contributor) {
+    public PageResult<IssueInfo> queryIssueInfoByContributor(PageParams pageParams, String contibutorId) {
         Page<IssueInfo> page = new Page<>(pageParams.getPageNo(), pageParams.getPageSize());
         LambdaQueryWrapper<IssueInfo> queryWrapper = new LambdaQueryWrapper<>();
-        queryWrapper.eq(IssueInfo::getContributorId, contributor.getId());
+        queryWrapper.eq(IssueInfo::getContributorId, contibutorId);
         Page<IssueInfo> issueInfoPage = issueInfoMapper.selectPage(page, queryWrapper);
         PageResult<IssueInfo> result = new PageResult<>(issueInfoPage.getRecords(), issueInfoPage.getTotal(), pageParams.getPageNo(), pageParams.getPageSize());
         return result;
     }
 
     @Override
-    public PageResult<IssueInfo> queryIssueInfoByProject(PageParams pageParams, Project project) {
+    public PageResult<IssueInfo> queryIssueInfoByProject(PageParams pageParams,String projectId) {
         Page<IssueInfo> page = new Page<>(pageParams.getPageNo(), pageParams.getPageSize());
         LambdaQueryWrapper<IssueInfo> queryWrapper = new LambdaQueryWrapper<>();
-        queryWrapper.eq(IssueInfo::getProjectId, project.getId());
+        queryWrapper.eq(IssueInfo::getProjectId, projectId);
         Page<IssueInfo> issueInfoPage = issueInfoMapper.selectPage(page, queryWrapper);
         PageResult<IssueInfo> result = new PageResult<>(issueInfoPage.getRecords(), issueInfoPage.getTotal(), pageParams.getPageNo(), pageParams.getPageSize());
         return result;

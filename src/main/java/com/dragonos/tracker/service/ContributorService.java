@@ -16,6 +16,7 @@ import java.util.List;
  */
 public interface ContributorService{
     // 按页搜索Contributor
-    PageResult<Contributor> queryContributorByPage(PageParams pageParams);
+    PageResult<Contributor> queryContributorForAllProject(PageParams pageParams);
+    PageResult<Contributor> queryContributorForAProject(PageParams pageParams, String projectId);
 
 }

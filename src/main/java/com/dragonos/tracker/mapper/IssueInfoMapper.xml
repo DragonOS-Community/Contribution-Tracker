@@ -13,11 +13,14 @@
         <result column="html_url" property="htmlUrl" />
         <result column="project_id" property="projectId" />
         <result column="project_name" property="projectName" />
+        <result column="state" property="state" />
     </resultMap>
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
         id, contributor_id, contributor_name, title, created_at, updated_at, html_url, project_id, project_name
     </sql>
-
+    <delete id="clearTable">
+        truncate table ct_issue_info;
+    </delete>
 </mapper>

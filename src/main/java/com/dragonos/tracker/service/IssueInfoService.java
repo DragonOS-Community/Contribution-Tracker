@@ -16,8 +16,8 @@ import com.dragonos.tracker.pojo.Project;
  */
 public interface IssueInfoService{
 
-    PageResult<IssueInfo> queryIssueInfoByContributor(PageParams pageParams, Contributor contributor);
-    PageResult<IssueInfo> queryIssueInfoByProject(PageParams pageParams,Project project);
+    PageResult<IssueInfo> queryIssueInfoByContributor(PageParams pageParams, String contibutorId);
+    PageResult<IssueInfo> queryIssueInfoByProject(PageParams pageParams,String projectId);
     PageResult<IssueInfo> queryIssueInfoByName(PageParams pageParams,String name);
 
 }

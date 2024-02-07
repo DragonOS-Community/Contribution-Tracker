@@ -9,20 +9,22 @@
         <result column="full_name" property="fullName" />
         <result column="html_url" property="htmlUrl" />
         <result column="description" property="description" />
-        <result column="created_at" property="createdAt" />
-        <result column="updated_at" property="updatedAt" />
-        <result column="license" property="license" />
-        <result column="forks_count" property="forksCount" />
-        <result column="stargazers_count" property="stargazersCount" />
-        <result column="watchers_count" property="watchersCount" />
         <result column="pr_num" property="prNum" />
         <result column="issue_num" property="issueNum" />
         <result column="hot" property="hot" />
+        <result column="project_id" property="projectId" />
+        <result column="state" property="state" />
+        <result column="created_at" property="createdAt" />
+        <result column="updated_at" property="updatedAt" />
     </resultMap>
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
         id, name, full_name, html_url, description, created_at, updated_at, license, forks_count, stargazers_count, watchers_count, pr_num, issue_num, hot
     </sql>
+
+    <delete id="clearTable">
+        truncate table ct_project;
+    </delete>
 
 </mapper>

@@ -32,13 +32,6 @@ import java.util.List;
 public class ProjectServiceImpl implements ProjectService {
     @Autowired
     ProjectMapper projectMapper;
-    @Autowired
-    GithubConfig githubConfig;
-    @Override
-    public List<Project> queryAllProjects() {
-        List<Project> projects = projectMapper.selectList(null);  // 查询所有
-        return projects;
-    }
 
     @Override
     public PageResult<Project> queryProjectsByPage(PageParams pageParams) {
@@ -58,33 +51,4 @@ public class ProjectServiceImpl implements ProjectService {
         return result;
     }
 
-
-    private List<Project> getProjectFromGithub(String owner){
-        OkHttpClient client = new OkHttpClient();
-        // 构建API请求URL
-        String apiUrl = "https://api.github.com/users/"+owner+"/repos";
-        // 创建HTTP请求
-        Request.Builder requestBuilder = new Request.Builder()
-                .url(apiUrl);
-        Request request = requestBuilder.build();
-        List<Project> projectList = new ArrayList<>();
-        try {
-            // 发送请求并获取响应
-            Response response = client.newCall(request).execute();
-            // 处理响应数据
-            if (response.isSuccessful()) {
-                System.out.println(response.body());
-                Project project = new Project();
-                // 这里需要获取每个项目的issue数目和pr数目
-
-                String responseBody = response.body().string();
-                System.out.println(responseBody); // 这里可以根据需要进行进一步的数据处理
-            } else {
-                System.out.println("请求失败：" + response.code() + " " + response.message());
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return projectList;
-    }
 }

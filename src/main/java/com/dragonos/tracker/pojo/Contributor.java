@@ -46,5 +46,20 @@ public class Contributor implements Serializable {
      */
     private Integer contributions;
 
+    /**
+     * 对应项目id
+     */
+    private String projectId;
+
+    /**
+     * 项目名
+     */
+    private String projectName;
+
+    /**
+     * 贡献者id
+     */
+    private String contributorId;
+
 
 }

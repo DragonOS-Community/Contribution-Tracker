@@ -62,5 +62,22 @@ public class Project implements Serializable {
      */
     private Integer hot;
 
+    /**
+     * 项目github id
+     */
+    private String projectId;
+
+    private Integer state;
+
+    /**
+     * pr提交时间
+     */
+    private String createdAt;
+
+    /**
+     * pr的update时间
+     */
+    private String updatedAt;
+
 
 }

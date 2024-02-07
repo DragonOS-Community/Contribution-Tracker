@@ -30,7 +30,7 @@ public class IssueInfo implements Serializable {
     /**
      * 贡献者id
      */
-    private Integer contributorId;
+    private String contributorId;
 
     /**
      * 贡献者用户名
@@ -60,12 +60,17 @@ public class IssueInfo implements Serializable {
     /**
      * 对应项目id
      */
-    private Integer projectId;
+    private String projectId;
 
     /**
      * 项目名
      */
     private String projectName;
+
+    /**
+     * 状态，1为open，0为close
+     */
+    private Integer state;
 
 
 }

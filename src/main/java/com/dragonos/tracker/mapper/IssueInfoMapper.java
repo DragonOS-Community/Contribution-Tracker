@@ -10,5 +10,5 @@ import com.dragonos.tracker.pojo.IssueInfo;
  * @author yummy
  */
 public interface IssueInfoMapper extends BaseMapper<IssueInfo> {
-
+    int clearTable();
 }

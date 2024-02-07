@@ -28,20 +28,20 @@ public class PrInfoServiceImpl implements PrInfoService {
 
 
     @Override
-    public PageResult<PrInfo> queryPrInfoByContributor(PageParams pageParams, Contributor contributor) {
+    public PageResult<PrInfo> queryPrInfoByContributor(PageParams pageParams, String contributorId) {
         Page<PrInfo> page = new Page<>(pageParams.getPageNo(), pageParams.getPageSize());
         LambdaQueryWrapper<PrInfo> queryWrapper = new LambdaQueryWrapper<>();
-        queryWrapper.eq(PrInfo::getContributorId, contributor.getId());
+        queryWrapper.eq(PrInfo::getContributorId, contributorId);
         Page<PrInfo> prInfoPage = prInfoMapper.selectPage(page, queryWrapper);
         PageResult<PrInfo> result = new PageResult<>(prInfoPage.getRecords(), prInfoPage.getTotal(), pageParams.getPageNo(), pageParams.getPageSize());
         return result;
     }
 
     @Override
-    public PageResult<PrInfo> queryPrInfoByProject(PageParams pageParams, Project project) {
+    public PageResult<PrInfo> queryPrInfoByProject(PageParams pageParams,String projectId) {
         Page<PrInfo> page = new Page<>(pageParams.getPageNo(), pageParams.getPageSize());
         LambdaQueryWrapper<PrInfo> queryWrapper = new LambdaQueryWrapper<>();
-        queryWrapper.eq(PrInfo::getProjectId, project.getId());
+        queryWrapper.eq(PrInfo::getProjectId, projectId);
         Page<PrInfo> prInfoPage = prInfoMapper.selectPage(page, queryWrapper);
         PageResult<PrInfo> result = new PageResult<>(prInfoPage.getRecords(), prInfoPage.getTotal(), pageParams.getPageNo(), pageParams.getPageSize());
         return result;

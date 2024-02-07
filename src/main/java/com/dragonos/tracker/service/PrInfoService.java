@@ -17,7 +17,7 @@ import java.util.List;
  * @since 2024-01-30
  */
 public interface PrInfoService{
-    PageResult<PrInfo> queryPrInfoByContributor(PageParams pageParams, Contributor contributor);
-    PageResult<PrInfo> queryPrInfoByProject(PageParams pageParams,Project project);
+    PageResult<PrInfo> queryPrInfoByContributor(PageParams pageParams, String contributorId);
+    PageResult<PrInfo> queryPrInfoByProject(PageParams pageParams,String projectId);
     PageResult<PrInfo> queryPrInfoByName(PageParams pageParams,String name);
 }

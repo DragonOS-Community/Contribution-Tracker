@@ -11,5 +11,5 @@ import com.dragonos.tracker.pojo.Project;
  * @author yummy
  */
 public interface ProjectMapper extends BaseMapper<Project> {
-
+    int clearTable();
 }

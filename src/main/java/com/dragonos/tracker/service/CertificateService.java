@@ -1,4 +1,7 @@
 package com.dragonos.tracker.service;
+
+import com.dragonos.tracker.pojo.Certificate;
+
 /**
  * <p>
  * 证书信息 服务类

@@ -11,5 +11,5 @@ import com.dragonos.tracker.pojo.PrInfo;
  * @author yummy
  */
 public interface PrInfoMapper extends BaseMapper<PrInfo> {
-
+    int clearTable();
 }

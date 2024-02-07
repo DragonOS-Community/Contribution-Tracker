@@ -9,11 +9,22 @@
         <result column="pr_num" property="prNum" />
         <result column="issue_num" property="issueNum" />
         <result column="contributions" property="contributions" />
+        <result column="contributor_id" property="contributorId" />
+        <result column="project_id" property="projectId" />
+        <result column="project_name" property="projectName" />
     </resultMap>
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
         id, name, pr_num, issue_num, contributions
     </sql>
+    <delete id="clearTable">
+        truncate table ct_contributor;
+    </delete>
 
+    <select id="selectAllByAllProject" resultMap="BaseResultMap" parameterType="com.dragonos.tracker.config.PageParams">
+        select name, sum(pr_num), sum(issue_num), sum(contributions)
+        from ct_contributor
+        group by `name` limit (#{pageNo} - 1) * #{pageSize}, #{pageSize};
+    </select>
 </mapper>
