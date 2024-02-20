@@ -1,0 +1,141 @@
+@media only screen and (max-width: 767px){
+  .homeView{
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    .contributor-table{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      .tool-bar{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 0;
+        .el-input{
+          width: 30%;
+        }
+        .el-select{
+          width: 30%;
+        }
+      }
+      .el-pagination{
+        margin: 15px 0;
+      }
+    }
+    .ranking-list{
+      width: 100%;
+      display:flex;
+      flex-direction: column;
+    }
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px){
+  .homeView{
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    .contributor-table{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      .tool-bar{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 0;
+        .el-input{
+          width: 30%;
+        }
+        .el-select{
+          width: 30%;
+        }
+      }
+      .el-pagination{
+        margin: 15px 0;
+      }
+    }
+    .ranking-list{
+      width: 100%;
+      display:flex;
+      flex-direction: column;
+    }
+  }
+}
+@media only screen and (min-width: 1025px) and (max-width: 1440px) {
+  .homeView{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    .contributor-table{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      flex: 5;
+      .tool-bar{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        margin: 10px 0;
+        .el-input{
+          width: 30%;
+        }
+        .el-select{
+          width: 30%;
+        }
+      }
+      .el-pagination{
+        margin: 15px 0;
+      }
+    }
+    .ranking-list{
+      flex:2;
+      height: 100%;
+      display:flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .el-button{
+      width: 80px;
+    }
+  }
+}
+@media only screen and (min-width: 1441px) {
+  /* 在此处添加大屏幕设备的样式 */
+}
+@media only screen and (orientation: portrait) {
+  /* 在此处添加纵向方向的样式 */
+}
+@media only screen and (orientation: landscape) {
+  /* 在此处添加横向方向的样式 */
+}
+
+.demo-pagination-block + .demo-pagination-block {
+  margin-top: 10px;
+}
+.demo-pagination-block .demonstration {
+  margin-bottom: 16px;
+}
+.title{
+  display: flex;
+  align-items: center;
+  margin: 10px 0 10px 15px;
+  font-weight: bold;
+}
+.list{
+  padding: 0 20px 0 20px;
+  width: calc(100% - 40px);
+  display: flex;
+  flex-direction: column;
+  .list-item{
+    width: 100%;
+    justify-content: space-between;
+    display: flex;
+    margin-bottom: 6px;
+  }
+}
